@@ -8,19 +8,31 @@ from pathlib import Path
 from typing import Any
 
 
+# @ensure_annotations
+# def read_yaml(file_path: Path) -> ConfigBox:
+#     try:
+#         with open(file_path) as yaml_file:
+#             yaml_data = yaml.safe_load(yaml_file)
+#             logger.info(f"Successfully loaded YAML data from {file_path}")
+#             return ConfigBox(yaml_data)
+#     except BoxValueError:
+#         raise ValueError("yaml file is empty or contains invalid data")
+    
+#     except Exception as e:
+#         raise e
+
 @ensure_annotations
 def read_yaml(file_path: Path) -> ConfigBox:
     try:
         with open(file_path) as yaml_file:
-            yaml_data = yaml.safe_load(file)
+            yaml_data = yaml.safe_load(yaml_file)
             logger.info(f"Successfully loaded YAML data from {file_path}")
             return ConfigBox(yaml_data)
-    except BoxValueError:
-        raise ValueError("yaml file is empty or contains invalid data")
-    
+    except ValueError:
+        raise ValueError("YAML file is empty or contains invalid data")
     except Exception as e:
-        raise e
-    
+        logger.error(f"Error loading YAML file from {file_path}: {e}")
+        raise e    
 
 @ensure_annotations
 def create_directories(directory_paths: list, verbose=True):
