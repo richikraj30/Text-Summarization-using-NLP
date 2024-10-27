@@ -164,3 +164,4 @@ cython_debug/
 
 artifacts/*
 EDA/summarizer-data/*
+{ACCELERATE_MIN_VERSION}
