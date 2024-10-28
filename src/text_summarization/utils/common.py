@@ -8,18 +8,7 @@ from pathlib import Path
 from typing import Any
 
 
-# @ensure_annotations
-# def read_yaml(file_path: Path) -> ConfigBox:
-#     try:
-#         with open(file_path) as yaml_file:
-#             yaml_data = yaml.safe_load(yaml_file)
-#             logger.info(f"Successfully loaded YAML data from {file_path}")
-#             return ConfigBox(yaml_data)
-#     except BoxValueError:
-#         raise ValueError("yaml file is empty or contains invalid data")
-    
-#     except Exception as e:
-#         raise e
+
 
 @ensure_annotations
 def read_yaml(file_path: Path) -> ConfigBox:
@@ -47,5 +36,4 @@ def create_directories(directory_paths: list, verbose=True):
 def get_size(directory_path: Path) -> str:
     size_in_kb = round(os.path.getsize(directory_path) / 1024)
     return f"~ {size_in_kb} KB"
-
 
