@@ -51,12 +51,15 @@ This project implements a text summarization model using natural language proces
     "text": "Your input text goes here."
    }
 4. Screenshots
+     - #### Entering your text in FASTAPI UI:
+      ![Entering your text in FASTAPI UI](./screenshots/Enteryourtext.jpg)
    
-     - ![Entering your text in FASTAPI UI](./screenshots/Enter your text.jpg)
+     - #### Server's Response  
+      ![Server Response](./screenshots/serverResponse.jpg)
+   
+     - #### Model Summary  
      
-     - ![Server Response](./screenshots/serverResponse.jpg)
-     
-     - ![Model Summary](./screenshots/ModelSummary.jpg)
+      ![Model Summary](./screenshots/ModelSummary.jpg)
 ### Model Training
 
   - To train or fine-tune the summarization model, consider using a Jupyter Notebook on Google Colab.
